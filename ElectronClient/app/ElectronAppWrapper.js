@@ -198,7 +198,11 @@ class ElectronAppWrapper {
 			this.tray_.setContextMenu(contextMenu);
 
 			this.tray_.on('click', () => {
-				this.window().show();
+				if (this.window().isVisible()) {
+					this.window().close();
+				} else {
+					this.window().show();
+				}
 			});
 		} catch (error) {
 			console.error('Cannot create tray', error);
