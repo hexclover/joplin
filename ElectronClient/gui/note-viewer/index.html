@@ -376,7 +376,7 @@
 			lastScrollEventTime = 0;
 
 			const percent = currentPercentScroll();
-			setPercentScroll(percent);
+			percentScroll_ = percent;
 			
 			ipcProxySendToHost('percentScroll', percent);
 		}));
