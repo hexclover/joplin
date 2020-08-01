@@ -154,7 +154,7 @@ class Bridge {
 	}
 
 	openItem(fullPath) {
-		return require('electron').shell.openItem(fullPath);
+		return require('electron').shell.openPath(fullPath);
 	}
 
 	checkForUpdates(inBackground, window, logFilePath, options) {
