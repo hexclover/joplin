@@ -543,7 +543,7 @@ class Application extends BaseApplication {
 			click: () => {
 				const templateDir = Setting.value('templateDir');
 				if (!templateDirExists) shim.fsDriver().mkdir(templateDir);
-				shell.openItem(templateDir);
+				shell.openPath(templateDir);
 			},
 		}, {
 			label: _('Refresh templates'),
