@@ -665,7 +665,7 @@ class Application extends BaseApplication {
 				visible: shim.isMac() ? false : true,
 				submenu: importItems,
 			}, {
-				label: _('Export'),
+				label: _('Export all'),
 				visible: shim.isMac() ? false : true,
 				submenu: exportItems,
 			}, {
@@ -1042,11 +1042,9 @@ class Application extends BaseApplication {
 		// https://github.com/laurent22/joplin/issues/155
 
 		const css = `.CodeMirror * { font-family: ${fontFamilies.join(', ')} !important; }`;
-		const ace_css = `.ace_editor * { font-family: ${fontFamilies.join(', ')} !important; }`;
 		const styleTag = document.createElement('style');
 		styleTag.type = 'text/css';
 		styleTag.appendChild(document.createTextNode(css));
-		styleTag.appendChild(document.createTextNode(ace_css));
 		document.head.appendChild(styleTag);
 	}
 
@@ -1214,7 +1212,7 @@ class Application extends BaseApplication {
 		if (Setting.value('env') === 'dev') {
 			AlarmService.updateAllNotifications();
 		} else {
-			reg.scheduleSync().then(() => {
+			reg.scheduleSync(1000).then(() => {
 				// Wait for the first sync before updating the notifications, since synchronisation
 				// might change the notifications.
 				AlarmService.updateAllNotifications();
