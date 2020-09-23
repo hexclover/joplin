@@ -65,6 +65,9 @@ CliClient/app/LinkSelector.js
 CliClient/build/LinkSelector.js
 CliClient/tests/synchronizer_LockHandler.js
 CliClient/tests/synchronizer_MigrationHandler.js
+ElectronClient/app/dist/linux-unpacked/resources/app/gui/ShareNoteDialog.js
+ElectronClient/app/dist/linux-unpacked/resources/app/lib/JoplinServerApi.js
+ElectronClient/app/lib/JoplinServerApi.js
 ElectronClient/commands/focusElement.js
 ElectronClient/commands/startExternalEditing.js
 ElectronClient/commands/stopExternalEditing.js
